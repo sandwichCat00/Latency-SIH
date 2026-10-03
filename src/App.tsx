@@ -182,8 +182,8 @@ function InstitutionalBar({
       <div className="inst-brand">
         <div className="crest-symbol">DAIC</div>
         <div className="inst-titles">
-          <h1 className="inst-title">{t.instName}</h1>
-          <p className="inst-meta">{t.instTag}</p>
+          <h1 className="inst-title">Dr. Ambedkar International Centre</h1>
+          <p className="inst-meta">National Heritage Archive · Ministry of Social Justice & Empowerment</p>
         </div>
       </div>
 
@@ -194,34 +194,34 @@ function InstitutionalBar({
             onClick={() => setMode('kiosk')}
             title="Interactive Touch Kiosk Display"
           >
-            <Monitor size={14}/> <span>{t.kioskMode}</span>
+            <Monitor size={13}/> <span>KIOSK</span>
           </button>
           <button
             className={`pill-btn ${mode === 'researcher' ? 'active' : ''}`}
             onClick={() => setMode('researcher')}
             title="Scholar & Academic Research Portal"
           >
-            <BookOpen size={14}/> <span>{t.researcherMode}</span>
+            <BookOpen size={13}/> <span>SCHOLAR</span>
           </button>
           <button
             className={`pill-btn ${mode === 'ambient' ? 'active' : ''}`}
             onClick={() => setMode('ambient')}
             title="Memorial Smart Display Attract Loop"
           >
-            <Sparkles size={14}/> <span>{t.ambientMode}</span>
+            <Sparkles size={13}/> <span>DISPLAY</span>
           </button>
         </div>
 
-        <button className="pill-btn nav-shortcut" onClick={openSearch} title="Semantic Search">
-          <Search size={14}/> <span>{t.search}</span>
+        <button className="pill-btn nav-shortcut" onClick={openSearch} title="AI Semantic Search">
+          <Search size={13}/> <span>SEARCH</span>
         </button>
 
         <button className="pill-btn nav-shortcut" onClick={openResearch} title="AI Research Assistant">
-          <Compass size={14}/> <span>{t.research}</span>
+          <Compass size={13}/> <span>RESEARCH</span>
         </button>
 
-        <button className="pill-btn nav-shortcut" onClick={openPreserve} title="Digital Preservation Standards & Citations">
-          <ShieldCheck size={14}/> <span>{t.preservation}</span>
+        <button className="pill-btn nav-shortcut" onClick={openPreserve} title="Digital Preservation & Citations">
+          <ShieldCheck size={13}/> <span>PRESERVATION</span>
         </button>
 
         <div className="text-sizer" role="group" aria-label="Accessibility Text Size">
@@ -1435,10 +1435,10 @@ function Exhibition({
 
 export default function App() {
   const [lang, setLang] = useState(() => sessionStorage.getItem('lang') || 'en')
-  const [scr, setScr] = useState<'landing' | 'exh'>('landing')
+  const [scr, setScr] = useState<'landing' | 'exh'>('exh')
   const [mode, setMode] = useState<'kiosk' | 'researcher' | 'ambient'>('kiosk')
   const [textScale, setTextScale] = useState(1.0)
-  const [ov, setOv] = useState<string | null>(null)
+  const [ov, setOv] = useState<string | null>('preserve')
   const [doc, setDoc] = useState<string | null>(null)
   const [ret, setRet] = useState(false)
   const [vq, setVq] = useState('')
